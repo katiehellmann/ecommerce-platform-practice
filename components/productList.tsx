@@ -25,14 +25,14 @@ export const ProductList = ({ products }: Props) => {
   
 
   return (
-    <div>
+    <div className="font-serif">
       <div className="mb-6 flex justify-center">
         <input
           type="text"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           placeholder="search products..."
-          className="w-full max-w-md rounded border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full max-w-md rounded bg-surface/50 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-accent/40"
         />
       </div>
 

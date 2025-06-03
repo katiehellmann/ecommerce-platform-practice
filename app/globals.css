@@ -3,6 +3,15 @@
 
 /* Define design tokens (custom properties) using the @theme directive */
 @theme {
+  --color-surface: #aebab8;
+  --color-accent1: #aa9326;
+  --color-primaryUI: #889672;
+  --color-card: #cecaad;
+  --color-textColor: #2b2821;
+  --color-bg: #d6d8bf;
+  --color-footer: #4D553F;
+
+  
   --background: 0 0% 100%;
   --foreground: 0 0% 3.9%;
   --card: 0 0% 100%;
@@ -32,10 +41,6 @@
 
 /* Base global styles using the new @layer syntax */
 @layer base {
-  /* Apply a default border style using our custom border color */
-  /* * {
-    @apply border border-[rgb(var(--color-border))];
-  } */
 
   .border-border {
     border-width: 2px;

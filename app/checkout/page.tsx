@@ -1,11 +1,11 @@
 "use client";
-import { Card, CardContent, CardHeader, CardTitle, } from "@/components/ui/card";
-import { useCartStore, } from "@/store/cartStore";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useCartStore } from "@/store/cartStore";
 import { Button } from "@/components/ui/button";
 import { CheckoutAction } from "./checkoutAction";
 
 export default function CheckoutPage() {
-  const { items, addItem, removeItem,} = useCartStore();
+  const { items, addItem, removeItem } = useCartStore();
   //find the total price of all items
   const total = items.reduce(
     (acc, item) => acc + item.price * item.quantity,
@@ -14,15 +14,21 @@ export default function CheckoutPage() {
   //return a base case, only if the cart is empty
   if (total === 0 || items.length === 0) {
     return (
-      <div>
-        <h1>Your Cart is Empty!</h1>
+      <div className="container mx-auto px-4 ">
+        <h1 className="text-3xl font-bold mb-4 text-center">Checkout</h1>
+        <hr className="w-48 h-1 mx-auto mb-4 bg-textColor" />
+        <Card className="container max-w-md  mx-auto px-4 py-8 text-center">
+          <h1>Your Cart is Empty!</h1>
+        </Card>
       </div>
     );
-  };
+  }
 
-return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8 text-center">Checkout</h1>
+  return (
+    <div className="container mx-auto px-4 ">
+      <h1 className="text-3xl font-bold mb-4 text-center">Checkout</h1>
+      <hr className="w-48 h-1 mx-auto mb-4 bg-textColor" />
+
       <Card className="max-w-md mx-auto mb-8">
         <CardHeader>
           <CardTitle className="text-xl font-bold">Order Summary</CardTitle>
@@ -64,7 +70,7 @@ return (
       </Card>
       <form action={CheckoutAction} className="max-w-md mx-auto">
         <input type="hidden" name="items" value={JSON.stringify(items)} />
-        <Button type="submit" variant="default" className="w-full">
+        <Button type="submit" variant="default" className="w-full bg-accent1 hover:bg-accent1/70">
           Proceed to Payment
         </Button>
 
