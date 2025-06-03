@@ -1,7 +1,6 @@
-import Image from "next/image";
+
 import { stripe } from "@/lib/stripe";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+
 import { ProductList } from "@/components/productList";
 
 export default async function ProductsPage(){

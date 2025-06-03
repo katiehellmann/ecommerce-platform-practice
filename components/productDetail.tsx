@@ -9,7 +9,7 @@ interface Props {
 export const ProductDetail = ({ product }: Props) => {
   const price = product.default_price as Stripe.Price;
   //use the hook created from cartStore
-  const {items, addItem, removeItem, clearCart} = useCartStore();
+  const {items, addItem, removeItem,} = useCartStore();
   const cartItem = items.find((item) => item.id === product.id);
   //check if there is some in the cart to display quantity, otherwise the quantity is 0
   const quantity = cartItem ? cartItem.quantity : 0;
